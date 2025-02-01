@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "youtube-dl-gui", "youtube-dl-gui\youtube-dl-gui.csproj", "{92512DE6-B6EE-4042-9DFA-97F9449BC998}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71D880B8-8870-41FD-92CE-B811A4461D41}"
+	ProjectSection(SolutionItems) = preProject
+		ARGUMENTS.md = ARGUMENTS.md
+		LICENSE = LICENSE
+		README.MD = README.MD
+		USERSCRIPTS.md = USERSCRIPTS.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Languages", "Languages", "{DD30229F-1AD3-4677-AAA6-D3C9E1D93487}"
+	ProjectSection(SolutionItems) = preProject
+		Languages\Arabic.ini = Languages\Arabic.ini
+		Languages\Brazilian_Portuguese.ini = Languages\Brazilian_Portuguese.ini
+		Languages\Dutch.ini = Languages\Dutch.ini
+		Languages\English.ini = Languages\English.ini
+		Languages\French.ini = Languages\French.ini
+		Languages\German.ini = Languages\German.ini
+		Languages\Italian.ini = Languages\Italian.ini
+		Languages\Japanese.ini = Languages\Japanese.ini
+		Languages\Russian.ini = Languages\Russian.ini
+		Languages\Simplified Chinese.ini = Languages\Simplified Chinese.ini
+		Languages\Spanish.ini = Languages\Spanish.ini
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "youtube-dl-gui-updater", "youtube-dl-gui-updater\youtube-dl-gui-updater.csproj", "{EF3A6A93-AB14-4A2D-8474-2985C0D07253}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Addons", "Addons", "{B0A064D9-F0F4-48DB-9E59-3355BA89E601}"
+	ProjectSection(SolutionItems) = preProject
+		Addons\reddit video download button.user.js = Addons\reddit video download button.user.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6759DD52-499D-4DFF-97BB-0202BAAE2130}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "youtube-dl-gui-test", "Tests\youtube-dl-gui-test\youtube-dl-gui-test.csproj", "{964C2F26-A878-4593-88E3-655C5B70F614}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Controls", "Controls\Controls.shproj", "{E1ADAF73-4046-4046-9082-004B1890EA3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92512DE6-B6EE-4042-9DFA-97F9449BC998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92512DE6-B6EE-4042-9DFA-97F9449BC998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92512DE6-B6EE-4042-9DFA-97F9449BC998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92512DE6-B6EE-4042-9DFA-97F9449BC998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92512DE6-B6EE-4042-9DFA-97F9449BC998}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EF3A6A93-AB14-4A2D-8474-2985C0D07253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3A6A93-AB14-4A2D-8474-2985C0D07253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3A6A93-AB14-4A2D-8474-2985C0D07253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3A6A93-AB14-4A2D-8474-2985C0D07253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{964C2F26-A878-4593-88E3-655C5B70F614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{964C2F26-A878-4593-88E3-655C5B70F614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{964C2F26-A878-4593-88E3-655C5B70F614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{964C2F26-A878-4593-88E3-655C5B70F614}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{964C2F26-A878-4593-88E3-655C5B70F614} = {6759DD52-499D-4DFF-97BB-0202BAAE2130}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0604EAD6-0D2D-4660-AB8C-8043E05EB3C7}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Controls\Controls.projitems*{92512de6-b6ee-4042-9dfa-97f9449bc998}*SharedItemsImports = 4
+		Controls\Controls.projitems*{e1adaf73-4046-4046-9082-004b1890ea3a}*SharedItemsImports = 13
+		Controls\Controls.projitems*{ef3a6a93-ab14-4a2d-8474-2985c0d07253}*SharedItemsImports = 4
+	EndGlobalSection
+EndGlobal

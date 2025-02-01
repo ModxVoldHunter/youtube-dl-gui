@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92512DE6-B6EE-4042-9DFA-97F9449BC998}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>youtube_dl_gui</RootNamespace>
+    <AssemblyName>youtube-dl-gui</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>12.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ProgramIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ArgumentList.cs" />
+    <Compile Include="Classes\BatchHelper.cs" />
+    <Compile Include="Classes\ConvertHelper.cs" />
+    <Compile Include="Classes\DataClasses\ConvertInfo.cs" />
+    <Compile Include="Classes\DataClasses\ExtendedConversionDetails.cs" />
+    <Compile Include="Classes\DataClasses\ExtendedMediaDetails.cs" />
+    <Compile Include="Classes\DataClasses\FfprobeData.cs" />
+    <Compile Include="Classes\DataClasses\Bases\MediaDetails.cs" />
+    <Compile Include="Classes\DataClasses\Bases\MediaInfo.cs" />
+    <Compile Include="Classes\DataClasses\Bases\MediaData.cs" />
+    <Compile Include="Classes\DataClasses\YoutubeDlData.cs" />
+    <Compile Include="Classes\DownloadHelper.cs" />
+    <Compile Include="Classes\DataClasses\DownloadInfo.cs" />
+    <Compile Include="Classes\QueueList.cs" />
+    <Compile Include="Config\Interfacing\CustomArguments.cs" />
+    <Compile Include="Controls\ExplorerTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LocalizedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\LocalizedProcessingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\TimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Enums\AudioSampleRates.cs" />
+    <Compile Include="Enums\MediaStatusIcon.cs" />
+    <Compile Include="Enums\VideoPresets.cs" />
+    <Compile Include="Enums\VideoProfiles.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Classes\Formats.cs" />
+    <Compile Include="Forms\frmExtendedConverter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmExtendedConverter.Designer.cs">
+      <DependentUpon>frmExtendedConverter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Language.cs" />
+    <Compile Include="Classes\NativeMethods.cs" />
+    <Compile Include="Classes\SystemRegistry.cs" />
+    <Compile Include="Classes\Verification.cs" />
+    <Compile Include="Config\Batch.cs" />
+    <Compile Include="Config\Converts.cs" />
+    <Compile Include="Config\Downloads.cs" />
+    <Compile Include="Config\Errors.cs" />
+    <Compile Include="Config\General.cs" />
+    <Compile Include="Config\Initialization.cs" />
+    <Compile Include="Config\Saved.cs" />
+    <Compile Include="Config\Interfacing\IniProvider.cs" />
+    <Compile Include="Config\Interfacing\Point.cs" />
+    <Compile Include="Config\Interfacing\Size.cs" />
+    <Compile Include="Controls\MessageHandler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ExtendedListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UacButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums\ArgumentType.cs" />
+    <Compile Include="Enums\AudioCBRQualityType.cs" />
+    <Compile Include="Enums\AudioFormatType.cs" />
+    <Compile Include="Enums\AudioVBRQualityType.cs" />
+    <Compile Include="Enums\ConversionStatus.cs" />
+    <Compile Include="Enums\ConversionType.cs" />
+    <Compile Include="Enums\DownloadStatus.cs" />
+    <Compile Include="Enums\DownloadType.cs" />
+    <Compile Include="Enums\PlaylistSelectionType.cs" />
+    <Compile Include="Enums\StatusIcon.cs" />
+    <Compile Include="Enums\VideoFormatType.cs" />
+    <Compile Include="Enums\VideoQualityType.cs" />
+    <Compile Include="Classes\DataClasses\AuthenticationDetails.cs" />
+    <Compile Include="Forms\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmArchiveDownloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmArchiveDownloader.Designer.cs">
+      <DependentUpon>frmArchiveDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAuthentication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAuthentication.Designer.cs">
+      <DependentUpon>frmAuthentication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBatchConverter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBatchConverter.Designer.cs">
+      <DependentUpon>frmBatchConverter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBatchDownloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBatchDownloader.Designer.cs">
+      <DependentUpon>frmBatchDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConverter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConverter.Designer.cs">
+      <DependentUpon>frmConverter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDownloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDownloader.Designer.cs">
+      <DependentUpon>frmDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDownloadLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDownloadLanguage.Designer.cs">
+      <DependentUpon>frmDownloadLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmExtendedDownloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmExtendedDownloader.Designer.cs">
+      <DependentUpon>frmExtendedDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFileNameSchemaHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFileNameSchemaHistory.Designer.cs">
+      <DependentUpon>frmFileNameSchemaHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGenericDownloadProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGenericDownloadProgress.Designer.cs">
+      <DependentUpon>frmGenericDownloadProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLanguage.Designer.cs">
+      <DependentUpon>frmLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMerger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMerger.Designer.cs">
+      <DependentUpon>frmMerger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMiscTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMiscTools.Designer.cs">
+      <DependentUpon>frmMiscTools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSubtitles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSubtitles.Designer.cs">
+      <DependentUpon>frmSubtitles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\Exceptions\DownloadException.cs" />
+    <Compile Include="Logging\Exceptions\ExtractOnlyException.cs" />
+    <Compile Include="Logging\Exceptions\InvalidDownloadProviderException.cs" />
+    <Compile Include="Logging\Forms\frmException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logging\Forms\frmException.Designer.cs">
+      <DependentUpon>frmException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\Forms\frmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logging\Forms\frmLog.designer.cs">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Updater\Form\frmUpdateAvailable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Updater\Form\frmUpdateAvailable.Designer.cs">
+      <DependentUpon>frmUpdateAvailable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Updater\GithubLinks.cs" />
+    <Compile Include="Updater\Github\GithubAsset.cs" />
+    <Compile Include="Updater\Github\GithubData.cs" />
+    <Compile Include="Updater\Github\GithubRepoContent.cs" />
+    <Compile Include="Updater\GitID.cs" />
+    <Compile Include="Updater\Updater.cs" />
+    <Compile Include="Arguments.cs" />
+    <Compile Include="GlobalNamespaces.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="Forms\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmArchiveDownloader.resx">
+      <DependentUpon>frmArchiveDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAuthentication.resx">
+      <DependentUpon>frmAuthentication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBatchConverter.resx">
+      <DependentUpon>frmBatchConverter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBatchDownloader.resx">
+      <DependentUpon>frmBatchDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConverter.resx">
+      <DependentUpon>frmConverter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDownloader.resx">
+      <DependentUpon>frmDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDownloadLanguage.resx">
+      <DependentUpon>frmDownloadLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmExtendedConverter.resx">
+      <DependentUpon>frmExtendedConverter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmExtendedDownloader.resx">
+      <DependentUpon>frmExtendedDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFileNameSchemaHistory.resx">
+      <DependentUpon>frmFileNameSchemaHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGenericDownloadProgress.resx">
+      <DependentUpon>frmGenericDownloadProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLanguage.resx">
+      <DependentUpon>frmLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMerger.resx">
+      <DependentUpon>frmMerger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMiscTools.resx">
+      <DependentUpon>frmMiscTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSubtitles.resx">
+      <DependentUpon>frmSubtitles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logging\Forms\frmException.resx">
+      <DependentUpon>frmException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logging\Forms\frmLog.resx">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Updater\Form\frmUpdateAvailable.resx">
+      <DependentUpon>frmUpdateAvailable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusIcons\selected_disabled.png" />
+    <None Include="Resources\StatusIcons\best_disabled.png" />
+    <None Include="Resources\StatusIcons\selected.png" />
+    <None Include="Resources\StatusIcons\best.png" />
+    <None Include="Resources\youtube-dl-gui-updater.exe" />
+    <None Include="Resources\StatusIcons\waiting.png" />
+    <None Include="Resources\StatusIcons\finished.png" />
+    <None Include="Resources\StatusIcons\download.png" />
+    <None Include="Resources\StatusIcons\error.png" />
+    <None Include="Resources\BuildDate.txt" />
+    <Content Include="Resources\ProgramIcon.ico" />
+    <Content Include="Resources\AboutImage.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="..\Controls\Controls.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if $(ConfigurationName) == Release "BuildDateWriter.exe" "$(ProjectDir)\Resources\BuildDate.txt"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Release xcopy "$(SolutionDir)Languages\*.ini" "$(SolutionDir)Release\lang\*.ini" /y
+if $(ConfigurationName) == Release copy "$(TargetPath)" "$(SolutionDir)Release"
+if $(ConfigurationName) == Release (del "$(SolutionDir)Release\$(ProjectName).zip")
+if $(ConfigurationName) == Release (7z a -mm=Deflate -mfb=128 -r "$(SolutionDir)Release\$(ProjectName).zip" "$(SolutionDir)Release\*")
+if $(ConfigurationName) == Release "$(SolutionDir)HashCalcConsole.exe" "$(SolutionDir)Release\$(ProjectName).exe" "$(SolutionDir)Release\$(ProjectName).zip"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
